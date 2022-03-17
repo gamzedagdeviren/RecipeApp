@@ -37,3 +37,4 @@ data class Recipe(
     val veryPopular: Boolean,
     val weightWatcherSmartPoints: Int,
 )
+data class RecyclerData(val name: String?, val description: String?, val owner: Recipe?)
