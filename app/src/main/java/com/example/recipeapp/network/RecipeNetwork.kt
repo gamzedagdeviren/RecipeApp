@@ -7,9 +7,9 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface RecipeNetwork {
-    @GET("search?")
+    @GET("complexSearch")
     fun getSearchRecipes(@Query("apiKey") key: String,
-                         @QueryMap queries: Map<String, String>) : Call<RecipeList>
+                         @Query("query") searchString: String) : Call<SearchResult>
 
     @GET("recipes/{id}/information?")
     fun getRecipe(@Path("id") id : String) : Call<SearchResult>

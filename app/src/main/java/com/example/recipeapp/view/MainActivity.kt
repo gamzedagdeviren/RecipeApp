@@ -2,6 +2,7 @@ package com.example.recipeapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun initViewModel() {
         val viewModel:MainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, Observer {
+            Log.i("deneme main", it.toString())
             if (it != null) {
                 recipeListAdapter.setListData(it)
                 recipeListAdapter.notifyDataSetChanged()

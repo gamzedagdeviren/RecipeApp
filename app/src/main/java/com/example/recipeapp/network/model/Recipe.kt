@@ -1,8 +1,7 @@
 package com.example.recipeapp.network.model
 
-import android.widget.RemoteViews
 
-data class RecipeList(val items: List<Recipe>)
+data class RecipeList(val results: ArrayList<Recipe>)
 data class Recipe(
     val aggregateLikes: Int?,
     val analyzedInstructions: List<Any>?,

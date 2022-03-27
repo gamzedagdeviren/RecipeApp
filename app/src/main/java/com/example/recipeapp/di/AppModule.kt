@@ -1,17 +1,15 @@
 package com.example.recipeapp.di
 
-import android.provider.UserDictionary.Words.APP_ID
 import com.example.recipeapp.network.RecipeNetwork
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -21,17 +19,35 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .readTimeout(15, TimeUnit.SECONDS)
+            .connectTimeout(15, TimeUnit.SECONDS)
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideConverterFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create()
+    }
+
+    @Singleton
+    @Provides
     fun getRetroServiceInterface(retrofit: Retrofit): RecipeNetwork {
         return retrofit.create(RecipeNetwork::class.java)
     }
 
-
     @Singleton
     @Provides
-    fun getRetroInstance(): Retrofit {
+    fun getRetroInstance(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(baseURL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+            .addConverterFactory(gsonConverterFactory)
             .build()
     }
 }

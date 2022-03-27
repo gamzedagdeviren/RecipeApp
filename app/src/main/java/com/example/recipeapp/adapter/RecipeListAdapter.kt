@@ -13,9 +13,9 @@ import kotlinx.android.synthetic.main.search_recipe_item.view.*
 
 class RecipeListAdapter : RecyclerView.Adapter<RecipeListAdapter.MyViewHolder>(){
 
-    private var listData: List<Recipe>? = null
+    private var listData: List<Results>? = null
 
-    fun setListData(listData: List<Recipe>?) {
+    fun setListData(listData: List<Results>?) {
         this.listData = listData
     }
 
@@ -37,14 +37,14 @@ class RecipeListAdapter : RecyclerView.Adapter<RecipeListAdapter.MyViewHolder>()
     }
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        //val imageFood = view.imageFood
+        val imageFood = view.imageFood
         val txtRecipeName = view.txtRecipeName
 
-        fun bind(data: Recipe) {
+        fun bind(data: Results) {
             txtRecipeName.text = data.title
-            /*Glide.with(imageFood)
+            Glide.with(imageFood)
                 .load(data.image)
-                .into(imageFood)*/
+                .into(imageFood)
         }
     }
 
