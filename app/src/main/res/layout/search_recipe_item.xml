@@ -14,6 +14,7 @@
         app:cardElevation="7dp" >
 
         <LinearLayout
+            android:id="@+id/linearRecipeList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >

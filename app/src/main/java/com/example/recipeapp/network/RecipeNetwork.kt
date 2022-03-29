@@ -9,10 +9,11 @@ import retrofit2.http.*
 interface RecipeNetwork {
     @GET("complexSearch")
     fun getSearchRecipes(@Query("apiKey") key: String,
-                         @Query("query") searchString: String) : Call<SearchResult>
+                         @Query("query") searchString: String) : Call<RecipeList>
 
-    @GET("recipes/{id}/information?")
-    fun getRecipe(@Path("id") id : String) : Call<SearchResult>
+    @GET("{id}/information")
+    fun getRecipe(@Path("id") id : Int,
+                  @Query("apiKey") key: String) : Call<Recipe>
 
 
     @GET("search?")

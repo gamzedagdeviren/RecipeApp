@@ -34,12 +34,12 @@ class MainActivity : AppCompatActivity() {
     private fun initViewModel() {
         val viewModel:MainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, Observer {
-            Log.i("deneme main", it.toString())
+           // Log.i("deneme main", it.toString())
             if (it != null) {
                 recipeListAdapter.setListData(it)
                 recipeListAdapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(this, "error in getting data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "error in getting data to mainActivity", Toast.LENGTH_SHORT).show()
             }
         })
         viewModel.loadListOfData()

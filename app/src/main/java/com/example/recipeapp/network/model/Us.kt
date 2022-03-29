@@ -1,7 +1,7 @@
 package com.example.recipeapp.network.model
 
 data class Us(
-    val amount: Int,
+    val amount: Double,
     val unitLong: String,
     val unitShort: String
 )

@@ -11,25 +11,24 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class RetroRepository  @Inject constructor(private val retroInstance: RecipeNetwork) {
+class RetroRepository @Inject constructor(private val retroInstance: RecipeNetwork) {
 
-    fun makeApiCall(query: String, liveDataList: MutableLiveData<List<Results>>) {
-        val call: Call<SearchResult> = retroInstance.getSearchRecipes("08ee9d25ada745e2a41a6a85ef3e7c87", query)
-        call.enqueue(object : Callback<SearchResult>{
-            override fun onFailure(call: Call<SearchResult>, t: Throwable) {
-                Log.i("deneme repo fail", t.message.toString())
+    fun searchRecipesApiCall(query: String, liveDataList: MutableLiveData<List<Recipe>>) {
+        val call: Call<RecipeList> = retroInstance.getSearchRecipes("08ee9d25ada745e2a41a6a85ef3e7c87", query)
+        call.enqueue(object : Callback<RecipeList>{
+            override fun onFailure(call: Call<RecipeList>, t: Throwable) {
+                //Log.i("deneme repo fail", t.message.toString())
                 liveDataList.postValue(null)
             }
 
-            override fun onResponse(call: Call<SearchResult>, response: Response<SearchResult>) {
+            override fun onResponse(call: Call<RecipeList>, response: Response<RecipeList>) {
                 if(response.isSuccessful) {
                     liveDataList.postValue(response.body()?.results!!)
                 }
-                Log.i("deneme repo response", response.body()?.results?.get(0).toString())
-                Log.i("deneme repo code", response.code().toString())
+               // Log.i("deneme repo response", response.body()?.results?.get(0).toString())
+                //Log.i("deneme repo code", response.code().toString())
 
             }
         })
-
     }
 }

@@ -2,7 +2,7 @@ package com.example.recipeapp.network.model
 
 data class ExtendedIngredient(
     val aisle: String,
-    val amount: Int,
+    val amount: Double,
     val consistency: String,
     val id: Int,
     val image: String,
