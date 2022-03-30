@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="15dp"
         android:layout_margin="10dp"
         android:clickable="true"
-        app:cardElevation="7dp" >
+        app:cardElevation="8dp" >
 
         <LinearLayout
             android:id="@+id/linearRecipeList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/imageFood"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/app_name"
-                tools:srcCompat="@tools:sample/avatars"  />
 
             <TextView
                 android:id="@+id/txtRecipeName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:ellipsize="marquee"
                 android:gravity="center"
-                android:lines="2"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="8dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
                 android:text="Recipe Name"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageFood"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                tools:srcCompat="@tools:sample/avatars"  />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-</LinearLayout>

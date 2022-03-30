@@ -51,6 +51,7 @@ class RecipeListAdapter : RecyclerView.Adapter<RecipeListAdapter.MyViewHolder>()
         val txtRecipeName = view.txtRecipeName
         val linearRecipeList = view.linearRecipeList
 
+
         fun bind(data: Recipe) {
             txtRecipeName.text = data.title
             Glide.with(imageFood)

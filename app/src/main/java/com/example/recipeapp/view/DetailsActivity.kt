@@ -11,6 +11,7 @@ import com.example.recipeapp.R
 import com.example.recipeapp.viewModel.DetailsActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_details.*
+import kotlinx.android.synthetic.main.search_recipe_item.*
 
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
@@ -30,8 +31,10 @@ class DetailsActivity : AppCompatActivity() {
             if (it != null) {
                 Log.i("deneme details", it.toString())
                 txt_detail_recipe_name.text = it.title
-                txt_details_min.text = it.readyInMinutes?.toString()
-                txt_details_serving.text = it.servings?.toString()
+                txt_detail_min.text = it.readyInMinutes?.toString() + " Minutes"
+                txt_detail_serving.text = it.servings?.toString() + " Servings"
+                txt_detail_likes.text = it.aggregateLikes?.toString() + " Likes"
+
                 Glide.with(img_detail_recipe)
                     .load(it.image)
                     .into(img_detail_recipe)
