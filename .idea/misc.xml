@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_details.xml" value="0.6" />
+        <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_details.xml" value="0.433392539964476" />
         <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/detail_recipe_ingredients_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/fragment_detail_recipe.xml" value="0.6" />
         <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/recipe_list_fragment.xml" value="0.13645833333333332" />
         <entry key="..\:/Users/gamze/AndroidStudioProjects/RecipeApp/app/src/main/res/layout/search_recipe_item.xml" value="0.1" />

@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity() {
     private fun initViewModel() {
         val viewModel:MainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, Observer {
-           // Log.i("deneme main", it.toString())
             if (it != null) {
+                Log.i("deneme main", it.toString())
                 recipeListAdapter.setListData(it)
                 recipeListAdapter.notifyDataSetChanged()
             } else {
