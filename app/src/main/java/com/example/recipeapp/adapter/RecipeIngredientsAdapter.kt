@@ -41,7 +41,7 @@ class RecipeIngredientsAdapter : RecyclerView.Adapter<RecipeIngredientsAdapter.M
         val txtIngredientsItem = view.txt_ingredients_item
 
         fun bind(data: ExtendedIngredient) {
-            txtIngredientsItem.text = data.original
+            txtIngredientsItem.text = "\u2022 " + data.original
         }
     }
 }

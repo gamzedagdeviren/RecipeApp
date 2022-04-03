@@ -28,8 +28,8 @@ class DetailsActivity : AppCompatActivity() {
         val id = Integer.parseInt(intent.extras!!.getString("recipe_id"))
 
         Log.i("deneme id", id.toString())
-        initViewModel(id)
         initIngredientsRecyclerView()
+        initViewModel(id)
     }
 
     private fun initIngredientsRecyclerView() {
